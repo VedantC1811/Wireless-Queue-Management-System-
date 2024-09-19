@@ -1,5 +1,22 @@
-// IF YOU WANT MAKE THIS CODE FOR CLIENT 2 JUST AND THE SIMILAR  END POINT THAT IS.../getcounter2
+/*
+  This code is for Client 2 of the Wireless Queue Management System.
+  It uses an ESP8266 to receive data from an IR remote and communicates
+  with the ESP32 server to send the combined value (queue token).
+  A second endpoint (/getCounter2) is used for Client 2 to send its data.
 
+  Components:
+  1. ESP8266: Acts as the client, handling IR inputs and communicating with the server.
+  2. EEPROM: Stores token numbers persistently between reboots.
+  3. IR remote: Used to input token numbers.
+  4. LCD Display: Shows the current token and connection status.
+  5. HTTPClient: Sends the combined token value to the ESP32 server at /getCounter2.
+
+  // The code now sends data to the /getCounter2 endpoint on the ESP32 server
+  // (http://192.168.4.1/getCounter2?value=<token_value>).
+ // The logic remains the same as the original client (Client 1), but the endpoint
+ // for the HTTP request is changed to match Client 2's needs.
+
+  */
 #include <ESP8266WiFi.h>
 #include <EEPROM.h>
 #include <IRremoteESP8266.h>
